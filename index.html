@@ -43,21 +43,25 @@
         <a href="features.html" class="button">See more features</a>
       </div>
       <div id="login_signup">
-        <div id="signup">
+        <form id="signup">
           <h1>Sign Up</h1>
-          <input type="text" name="full name" placeholder="full name" required>
-          <input type="email" name="email" placeholder="email address" required>
-          <input type="password" name="password" id="password" placeholder="password" required>
-          <input type="password" name="retype" id="confirm_password" placeholder="re-type password" required>
-          <input class="button" type="submit" value="Start Working">
-        </div>
+          <!-- <fieldset> -->
+            <input form="signup" type="text" name="full name" placeholder="full name" required>
+            <input form="signup" type="email" name="email" placeholder="email address" required>
+            <input form="signup" type="password" name="password" id="password" placeholder="password" required>
+            <input form="signup" type="password" name="retype" id="confirm_password" placeholder="re-type password" required>
+            <input class="button" type="submit" value="Start Working">
+          <!-- </fieldset> -->
+        </form>
         <div class="vertical_line"></div>
-        <div id="login">
+        <form id="login">
           <h1>Log In</h1>
-          <input type="email" name="email" placeholder="email address" required>
-          <input type="password" name="password" placeholder="password" required>
-          <input class="button" type="submit" value="Resume Work">
-        </div>
+          <!-- <fieldset> -->
+            <input form="login" type="email" name="email" placeholder="email address" required>
+            <input form="login" type="password" name="password" placeholder="password" required>
+            <input class="button" type="submit" value="Resume Work">
+          <!-- </fieldset> -->
+        </form>
       </div>
 
       <footer>
