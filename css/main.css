@@ -254,6 +254,7 @@ hr {
   top: 50px;
   right: 3em;
   padding: 10px;
+  z-index: 2;
   list-style-type: none;
 }
   .topNav_dropdown .dropdown li a {
@@ -275,6 +276,42 @@ hr {
   .topNav_dropdown:hover .dropdown a:hover {
     color: #8D99AE;
     background-color: #282d42;
+  }
+
+/*Modals*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 6;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+  .modal-content {
+    background-color: #EDF2F4;
+    margin: 10% auto;
+    padding: 0 1em 2em;
+    border: 1px solid #1a1a1a;
+    width: 30%;
+  }
+
+  .close {
+    color: #282d42;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #1A1A1A;
+    text-decoration: none;
+    cursor: pointer;
   }
 
 .workWrapper {
@@ -388,13 +425,13 @@ hr {
       }
 
       #new_task .input_group > *:not(textarea) {
-        width: 25%;
+        width: 35%;
         margin-right: 0.5em;
       }
 
       #new_task .form_buttons {
         text-align: right;
-        width: 60%;
+        width: 70%;
       }
 
     .button.danger {
