@@ -1,0 +1,10 @@
+Features:
+1. Set priority and difficulty.
+	- Due Now allows you to avoid the hassle of having to schedule your tasks while considering different aspects. You can just define your tasks and specify each one's level of difficulty and set whether the priority is low, medium, or high. The app will then categorize your tasks for you, providing suggestions on which task to do first, among other things. 
+	**- Avoid the hassle of having to constantly schedule your tasks in a certain period of time. Just specify your tasks' level of difficulty and priority as you input your tasks into the app, and let the app do the categorizing ans scheduling for you.
+2. Get notified of deadlines.
+	- Get desktop notifications whenever deadlines are near, or when there are unfinished tasks that are due soon. 
+3. Know when to start your tasks
+	- Be able to plan out your strategy in conquering that giant pile of work by knowing the most efficient time to start your tasks. Aside from the wide array of possible times to start derived from your tasks' details, the app also accepts user-defined information and assesses from there whether your proposed schedule is feasible or not.
+4. Get to know your work ethics
+	- Know the approximate time it takes for you to finish a certain type of task through your recent records of duration in finishing the same kind of tasks stored in the app. Of course, you may also opt to define the duration yourself.	

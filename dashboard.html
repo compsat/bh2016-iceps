@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard | Due Now</title>
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  </head>
+  <body>
+    <header class="mainHeader">
+        <a href="home.html"><img src="img/logo.png" alt="Due Now" class="topNav_logo"></a>
+      <nav class="topNav topNav_dropdown">
+        <a href="#"><img src="img/my-account.png" class="myAccount"> My Account&nbsp;<i class="fa fa-chevron-down"></i></a>
+        <ul class="hidden dropdown">
+          <li><a href="#">Preferences</a></li>
+          <li><a href="#">Account Settings</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="workWrapper">
+      <div class="taskList">
+        <div id="ongoing_tasks" class="task_group">
+          <div class="task_group_header">
+            <h2>Ongoing Tasks</h2> <a href="#"><i class="fa fa-edit"></i></a>
+          </div>
+          <hr>
+          <h4>TODAY</h4>
+          <input type="checkbox" class="task"> Insert task here<br>
+          <input type="checkbox" class="task"> Another task is here<br>
+          <h4>TOMORROW</h4>
+          <input type="checkbox" class="task"> More tasks for tomorrow<br>
+          <input type="checkbox" class="task"> I hope I don't die<br>
+        </div>
+        <div id="unfinished_tasks" class="task_group">
+          <div class="task_group_header">
+            <h2>Unfinished Tasks</h2> <a href="#"><i class="fa fa-edit"></i></a>
+          </div>
+          <hr>
+          <h4>MONDAY, Feb 29</h4>
+          <input type="checkbox" class="task"> Insert task here<br>
+          <input type="checkbox" class="task"> Another task is here<br>
+          <h4>FRIDAY, Mar 4</h4>
+          <input type="checkbox" class="task"> More tasks for tomorrow<br>
+          <input type="checkbox" class="task"> Hope is not lost<br>
+          <input type="checkbox" class="task"> I can get through this<br>
+          <input type="checkbox" class="task"> Kakayanin<br>
+        </div>
+      </div>
+      <div class="workingArea"></div>
+      <footer>
+        <div class="links">
+          <a href="about.html">About</a>
+          <a href="features.html">Features</a>
+        </div>
+        <img src="img/logo-circle.png">
+        <div class="social_media">
+          <a href="#"><i class="fa fa-facebook-square"></i></a>
+          <a href="#"><i class="fa fa-twitter-square"></i></a>
+          <a href="https://github.com/compsat/bh2016-ICEPs"><i class="fa fa-github-square"></i></a>
+          <a href="mailto: chi.senires@gmail.com?Subject=Due%20Now"><i class="fa fa-envelope-square"></i></a>
+        </div>
+      </footer>
+    </main>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

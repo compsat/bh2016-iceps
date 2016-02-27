@@ -2,75 +2,79 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/tabs.css">
-    <link rel="stylesheet" href="css/main.css">
+    <title>Due Now: do your due tasks now</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   </head>
   <body>
     <header class="mainHeader">
+        <a href="home.html"><img src="img/logo.png" alt="Due Now" class="topNav_logo"></a>
       <nav class="topNav">
-        <!-- <img src="" alt="" class="topNav_logo"> -->
         <ul class="topNav_list">
-          <li class="topNav_item">Login</li>
-          <li class="topNav_item">Signup</li>
+          <li class="topNav_item"><a href="#login">Login</a></li>
+          <li class="topNav_item cta"><a href="#signup">Sign Up</a></li>
         </ul>
       </nav>
     </header>
-    <main class="workWrapper">
-      <div class="workingArea">
-        <div class="tabContent_wrapper">
-          <!--Targets -->
-          <span id="tab1" class="hidden"></span>
-          <span id="tab2" class="hidden"></span>
-          <span id="tab3" class="hidden"></span>
-          <!--Links-->
-          <a href="#tab1" class="pills">Tab 1</a>
-          <a href="#tab2" class="pills">Tab 2</a>
-          <a href="#tab3" class="pills">Tab 3</a>
-          <div id="tab-content-1" class="tabContent">
-            TAB1
-            Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip
-            ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore
-            eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia
-            deserunt mollit anim id est laborum.
-          </div>
-          <div id="tab-content-2" class="tabContent">
-            TAB2
-            Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip
-            ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore
-            eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia
-            deserunt mollit anim id est laborum.
-          </div>
-          <div id="tab-content-3" class="tabContent">
-            TAB3
-            Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip
-            ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore
-            eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia
-            deserunt mollit anim id est laborum.
-          </div>
+    <main class="wrapper">
+      <div id="intro">
+        <h1>Do your due tasks now.</h1>
+        <p class="intro_text">Due Now helps you <strong>manage your time wisely</strong><br>by <strong>giving you suggestions</strong> on which tasks to finish first.</p>
+      </div>
+      <div id="services">
+        <div class="service">
+          <div class="placeholder circle"></div>
+          <h2>Set priority and difficulty.</h2>
+          <p>Categorize your tasks based on how hard or how urgent you need it done.</p>
+        </div>
+        <div class="service">
+          <div class="placeholder circle"></div>
+          <h2>Get notified of deadlines.</h2>
+          <p>Get push notifications when due dates are near.</p>
+        </div>
+        <div class="service">
+          <div class="placeholder circle"></div>
+          <h2>Know when to start your tasks.</h2>
+          <p>Get suggestions on which tasks to start first based on priority or difficulty.</p>
+        </div>
+
+        <a href="features.html" class="button">See more features</a>
+      </div>
+      <div id="login_signup">
+        <div id="signup">
+          <h1>Sign Up</h1>
+          <input type="text" name="full name" placeholder="full name" required>
+          <input type="email" name="email" placeholder="email address" required>
+          <input type="password" name="password" id="password" placeholder="password" required>
+          <input type="password" name="retype" id="confirm_password" placeholder="re-type password" required>
+          <input class="button" type="submit" value="Start Working">
+        </div>
+        <div class="vertical_line"></div>
+        <div id="login">
+          <h1>Log In</h1>
+          <input type="email" name="email" placeholder="email address" required>
+          <input type="password" name="password" placeholder="password" required>
+          <input class="button" type="submit" value="Resume Work">
         </div>
       </div>
-      <div class="taskList"></div>
+
+      <footer>
+        <div class="links">
+          <a href="about.html">About</a>
+          <a href="features.html">Features</a>
+        </div>
+        <img src="img/logo-circle.png">
+        <div class="social_media">
+          <a href="#"><i class="fa fa-facebook-square"></i></a>
+          <a href="#"><i class="fa fa-twitter-square"></i></a>
+          <a href="https://github.com/compsat/bh2016-ICEPs"><i class="fa fa-github-square"></i></a>
+          <a href="mailto: chi.senires@gmail.com?Subject=Due%20Now"><i class="fa fa-envelope-square"></i></a>
+        </div>
+      </footer>
     </main>
     <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
