@@ -53,7 +53,7 @@ a:hover {
 
 .mainHeader {
   width: 100%;
-  height: 108px;
+  height: 90px;
   background-color: #EDF2F4;
   padding: 0 2.5em;
   display: flex;
@@ -209,6 +209,7 @@ a:hover {
   }
 
 footer {
+  width: 100%;
   background-color: #282d42;
   padding: 2em 0;
   text-align: center;
@@ -232,20 +233,95 @@ footer {
 /*
  * Index.html
  */
+.topNav_dropdown > a {
+  display: inline-flex;
+  color: #282d42;
+  align-items: center;
+  margin-right: 2em;
+}
+
+  .topNav_dropdown > a > img {
+    margin-right: 0.5em;
+    width: 25%;
+  }
+
+.topNav_dropdown .dropdown {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 3em;
+  padding: 10px;
+  list-style-type: none;
+}
+  .topNav_dropdown .dropdown li a {
+    width: 180px;
+  }
+
+  .topNav_dropdown a:hover + .hidden, .hidden:hover {
+    display: block;
+  }
+
+  .topNav_dropdown:hover .dropdown a {
+    color: #1A1A1A;
+    display: block;
+    background-color: #EDF2F4;
+    padding: 0.5em;
+    margin-right: 1em;
+  }
+
+  .topNav_dropdown:hover .dropdown a:hover {
+    color: #8D99AE;
+    background-color: #282d42;
+  }
+
 .workWrapper {
   display: flex;
+  flex-wrap: wrap;
   height: calc(100vh - 108px);
 }
   .workingArea {
-    width: 60%;background-color: #8D99AE;
+    width: 70%;
+    background-color: #8D99AE;
   }
-    .pills {
-      display: inline-block;
-      width: 15vw;
-      padding: 10px;
-      text-align: center;
-    }
+  
   .taskList {
-    background-color: red;
-    width: 40%;
+    background-color: #282d42;
+    width: 30%;
+    padding-bottom: 1.5em;
+    overflow-y: auto;
+  }
+
+.task_group {
+  padding: 0 2em;
+  color: #EDF2F4;
+}
+  .task_group .task_group_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-content: flex-end;
+  }
+
+  .task_group .task_group_header > a i {
+    font-size: 1.5em;
+  }
+
+  .task_group .task_group_header > h2 {
+    margin-bottom: 0;
+    font-style: italic;
+    color: #80C98D;
+  }
+
+  .task_group > h4 {
+    margin: 0.75em 0 0.15em;
+  }
+
+  hr {
+    border-width: 1px;
+    border-style: solid;
+    color: #8D99AE;
+  }
+
+  .task {
+    border: 2px solid #8D99AE;
   }
