@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.mainHeader {
+  height: 108px;
+  background-color: #EDF2F4;
+}
+  .topNav_list {
+    margin: 0;
+  }
+
+/*
+ * Index.html
+ */
+.workWrapper {
+  display: flex;
+  height: calc(100vh - 108px);
+}
+  .workingArea {
+    width: 60%;background-color: #8D99AE;
+  }
+    .pills {
+      display: inline-block;
+      width: 15vw;
+      padding: 10px;
+      text-align: center;
+    }
+  .taskList {
+    background-color: red;
+    width: 40%;
+  }
