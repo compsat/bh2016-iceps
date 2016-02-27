@@ -12,6 +12,7 @@ body {
 
 h1, h2, h3 {
   font-family: 'Fira Sans', sans-serif;
+  font-style: italic;
 }
 
 h4, h5, h6 {
@@ -114,7 +115,6 @@ a:hover {
 
   #intro h1 {
     margin-bottom: 0.5em;
-    font-style: italic;
     font-size: 2.5em;
     color: #2b2d42;
   }
@@ -156,7 +156,6 @@ a:hover {
 
   .service h2 {
     color: #80C98D;
-    font-style: italic;
   }
 
   .service p {
@@ -185,7 +184,6 @@ a:hover {
   #signup h1,
   #login h1 {
     color: #2B2D42;
-    font-style: italic;
   }
 
   #signup > input:not([type="submit"]),
@@ -233,6 +231,11 @@ footer {
 /*
  * Index.html
  */
+hr {
+  border-width: 1px;
+  border-style: solid;
+}
+
 .topNav_dropdown > a {
   display: inline-flex;
   color: #282d42;
@@ -279,11 +282,6 @@ footer {
   flex-wrap: wrap;
   height: calc(100vh - 108px);
 }
-  .workingArea {
-    width: 70%;
-    background-color: #8D99AE;
-  }
-  
   .taskList {
     background-color: #282d42;
     width: 30%;
@@ -291,37 +289,119 @@ footer {
     overflow-y: auto;
   }
 
-.task_group {
-  padding: 0 2em;
-  color: #EDF2F4;
-}
-  .task_group .task_group_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    align-content: flex-end;
+  .task_group {
+    padding: 0 2em;
+    color: #EDF2F4;
+  }
+    .task_group .task_group_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      align-content: flex-end;
+    }
+
+    .task_group .task_group_header > a i {
+      font-size: 1.5em;
+    }
+
+    .task_group .task_group_header > h2 {
+      margin-bottom: 0;
+      color: #80C98D;
+    }
+
+    .task_group > h4 {
+      margin: 0.75em 0 0.15em;
+    }
+
+    .task_group > hr {
+      color: #8D99AE;
+    }
+
+    .task {
+      border: 2px solid #8D99AE;
+    }
+
+  .workingArea {
+    width: 70%;
+    background-color: #8D99AE;
   }
 
-  .task_group .task_group_header > a i {
-    font-size: 1.5em;
+    #weekly_overview {
+      padding: 0 2em;
+    }
+
+    #weekly_overview > h1 {
+      margin-bottom: 0.1em;
+    }
+
+    #weekly_overview > hr {
+      color: #282d42;
+    }
+
+    #weekly_overview .weekday {
+      display: inline-block;
+      width: 7.5em;
+      height: 7.5em;
+      margin: 0.5em 0.5em 2em;
+      background-color: #EDF2F4;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 1em;
+      color: #1A1A1A;
+      position: relative;
+    }
+
+      #weekly_overview .weekday:hover {
+        background-color: #B2B6B7;
+      }
+
+    #weekly_overview .weekday .numDeadlines {
+      position: absolute;
+      bottom: 0.75em;
+      right: 0.75em;
+      font-size: 2em;
+    }
+
+  #add_task {
+    background-color: #EDF2F4;
+    padding: 0.5em 2em 2em;
   }
 
-  .task_group .task_group_header > h2 {
-    margin-bottom: 0;
-    font-style: italic;
-    color: #80C98D;
-  }
+    #new_task > a {
+      color: #282d42;
+    }
 
-  .task_group > h4 {
-    margin: 0.75em 0 0.15em;
-  }
+    #new_task .input_group {
+      display: block;
+      width: 100%;
+      margin: 0.75em 0;
+      position: relative;
+    }
 
-  hr {
-    border-width: 1px;
-    border-style: solid;
-    color: #8D99AE;
-  }
+      .task_name, .task_name + a i {
+        font-size: 1.5em;
+        margin: 0.25em 0;
+      }
 
-  .task {
-    border: 2px solid #8D99AE;
-  }
+      .task_name + a i {
+        margin-left: 0.25em;
+      }
+
+      #new_task .input_group > *:not(textarea) {
+        width: 25%;
+        margin-right: 0.5em;
+      }
+
+      #new_task .form_buttons {
+        text-align: right;
+        width: 60%;
+      }
+
+    .button.danger {
+      background-color: #FF383E;
+      color: #EDF2F4;
+    }
+
+    .button.danger:hover {
+      background-color: #C9181E;
+    }

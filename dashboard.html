@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   </head>
@@ -52,7 +53,58 @@
           <input type="checkbox" class="task"> Kakayanin<br>
         </div>
       </div>
-      <div class="workingArea"></div>
+      <div class="workingArea">
+        <div id="weekly_overview">
+          <h1>Weekly Overview</h1>
+          <hr>
+          <a href="#" class="weekday">M <span class="numDeadlines"></span></a>
+          <a href="#" class="weekday">T <span class="numDeadlines"></span></a>
+          <a href="#" class="weekday">W <span class="numDeadlines">1</span></a>
+          <a href="#" class="weekday">Th <span class="numDeadlines">1</span></a>
+          <a href="#" class="weekday">F <span class="numDeadlines" style="color: #FF383E;">3</span></a>
+          <a href="#" class="weekday">S <span class="numDeadlines"></span></a>
+        </div>
+        <div id="add_task">
+          <h1>Add Task</h1>
+          <hr>
+          <form id="new_task">
+            <input type="text" name="task_name" class="task_name" placeholder="Set task name"> <a href="#"><i class="fa fa-edit"></i></a>
+            <br>
+            <div class="input_group">
+              <select name="task_type" class="task_type" form="new_task">
+                <option>Homework</option>
+                <option>Reading</option>
+                <option>Quiz</option>
+                <option>Project</option>
+                <option>Orals</option>
+                <option>Exam</option>
+              </select>
+              <select name="difficulty_lvl" class="difficulty_lvl" form="new_task">
+                <option>Difficulty Level 1</option>
+                <option>Difficulty Level 2</option>
+                <option>Difficulty Level 3</option>
+                <option>Difficulty Level 4</option>
+                <option>Difficulty Level 5</option>
+              </select>
+            </div>
+            <div class="input_group">
+              <select name="priority_lvl" class="priority_lvl" form="new_task">
+                <option>Low Priority</option>
+                <option>Medium Priority</option>
+                <option>High Priority</option>
+              </select>
+              <input type="text" id="datepicker" form="new_task" placeholder="Deadline"> <!-- fix CSS of this -->
+            </div>
+            <div class="input_group">
+              <textarea wrap="soft" name="task_description" class="task_description" rows="7" cols="54" form="new_task" placeholder="Add quick description (optional)"></textarea>
+            </div>
+            <div class="form_buttons">
+              <input class="button danger" type="submit" value="Clear Fields">
+              <input class="button" type="submit" value="Add Task">
+            </form>
+            </div>
+        </div>
+      </div>
       <footer>
         <div class="links">
           <a href="about.html">About</a>
@@ -68,6 +120,9 @@
       </footer>
     </main>
     <script src="js/jquery-2.1.4.js"></script>
-    <script src="js/main.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript">
+    $('#datepicker').datepicker();
+    </script>
   </body>
 </html>
