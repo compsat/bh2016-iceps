@@ -45,19 +45,20 @@
       <div id="login_signup">
         <form id="signup">
           <h1>Sign Up</h1>
-            <input form="signup" type="text" name="full name" placeholder="full name" required>
-            <input form="signup" type="email" name="email" placeholder="email address" required>
-            <input form="signup" type="password" name="password" id="password" placeholder="password" required>
-            <input form="signup" type="password" name="retype" id="confirm_password" placeholder="re-type password" required>
-            <input class="button" type="submit" value="Start Working">
+          <input form="signup" type="text" id="fullname" name="full name" placeholder="full name" required>
+          <input form="signup" type="email" id="email" name="email" placeholder="email address" required>
+          <input form="signup" type="password" name="password" id="password" placeholder="password" required>
+          <input form="signup" type="password" name="retype" id="confirm_password" placeholder="re-type password" required>
+          <input class="button" type="submit" value="Start Working" id="signUp" >
         </form>
+
         <div class="vertical_line"></div>
         <form id="login">
           <h1>Log In</h1>
-            <input form="login" type="email" name="email" placeholder="email address" required>
-            <input form="login" type="password" name="password" placeholder="password" required>
-            <input class="button" type="submit" value="Resume Work">
-        </form>
+          <input type="email" name="email" placeholder="email address" required id="emailLog">
+          <input type="password" name="password" placeholder="password" required id=passLog"">
+          <input class="button" type="submit" id="login" value="Resume Work">
+        </div>
       </div>
 
       <footer>
@@ -75,6 +76,7 @@
       </footer>
     </main>
     <script src="js/jquery-2.1.4.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-latest.js" charset="utf-8"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
