@@ -1,0 +1,67 @@
+.tabs {
+  list-style-type: none;
+  padding: 0;
+}
+  .tab {
+    display: inline-block;
+  }
+.tabContent_wrapper {
+  width: 80%;
+  margin: 5em auto;
+  overflow-x: hidden;
+  position: relative;
+}
+  .tabContent {
+    display: inline-block;
+    width: 100%;
+    transition:all .4s ease-in-out;
+    background-color: #EDF2F4;
+  }
+  #tab-content-1 {
+    transform: translate(0,0);
+  }
+  #tab-content-2 {
+    transform: translate(100%, -100%);
+  }
+  #tab-content-3 {
+    transform: translate(100%, -100%);
+  }
+  #tab1:target ~ a[href="#tab1"] {
+    background-color: green;
+  }
+  #tab2:target ~ a[href="#tab2"] {
+    background-color: green;
+  }
+  #tab3:target ~ a[href="#tab3"] {
+    background-color: green;
+  }
+  #tab1:target ~ #tab-content-2 {
+    transform: translate(100%,-100%);
+  }
+  #tab1:target ~ #tab-content-3 {
+    transform: translate(100%,-200%);
+  }
+  #tab2:target ~ #tab-content-1{
+    transform: translate(-100%,0);
+  }
+  #tab2:target ~ #tab-content-2 {
+    transform: translate(0,-100%);
+  }
+  #tab2:target ~ #tab-content-3 {
+    transform: translate(100%,-200%);
+  }
+  #tab3:target ~ #tab-content-1 {
+    transform: translate(-100%,0);
+  }
+  #tab3:target ~ #tab-content-2 {
+    transform: translate(-100%,-100%);
+  }
+  #tab3:target ~ #tab-content-3 {
+    transform: translate(0,-200%);
+  }
+  .hidden {
+    display: block;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+  }
