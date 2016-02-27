@@ -1,0 +1,8 @@
+TASKS Attributes:
+
+Users can
+- set Tasks which
+       - computes for a recommended time to start the task given the duration, priority, and difficulty.
+       - are ordered according to the the time recommended to start, priority, difficulty, and duration.
+       - which are set for the day of the week.	   
+	

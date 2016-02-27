@@ -1,0 +1,21 @@
+SETTINGS Attributes:
+
+User can...
+	- set time it takes to finish a
+		- Project
+        - Paper
+		- Orals
+		- HW
+		- Exam
+        - Quiz
+		- Reading
+		- <other user-specified tasks>
+	- add a new task type and specify its name
+	- specify when app sends a desktop notification, specifically
+		- how often must it remind user of unfinished tasks and when (example: twice a day when it's two days before the deadline)
+	
+    - set Tasks which
+       - computes for a recommended time to start the task given the duration, priority, and difficulty.
+       - are ordered according to the the time recommended to start, priority, difficulty, and duration.
+       - which are set for the day of the week.	   
+		
