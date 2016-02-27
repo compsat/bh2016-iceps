@@ -388,8 +388,8 @@ hr {
 
     #weekly_overview .weekday {
       display: inline-block;
-      width: 7.5em;
-      height: 7.5em;
+      width: 6em;
+      height: 6em;
       margin: 0.5em 0.5em 2em;
       background-color: #EDF2F4;
       padding: 10px;
@@ -405,8 +405,8 @@ hr {
 
     #weekly_overview .weekday .numDeadlines {
       position: absolute;
-      bottom: 0.75em;
-      right: 0.75em;
+      bottom: 0.25em;
+      right: 0.25em;
       font-size: 2em;
     }
 
