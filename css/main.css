@@ -227,9 +227,14 @@ footer {
     margin: 0 0.5em;
     font-size: 1.5em;
   }
+/*
+ * Features.html
+ */
+#features {}
+
 
 /*
- * Index.html
+ * Dashboard.html
  */
 hr {
   border-width: 1px;
@@ -365,13 +370,19 @@ hr {
 
     #weekly_overview {
       padding: 0 2em;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
 
     #weekly_overview > h1 {
+      width: 100%;
       margin-bottom: 0.1em;
     }
 
     #weekly_overview > hr {
+      width: 100%;
       color: #282d42;
     }
 
