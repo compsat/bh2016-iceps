@@ -1,23 +1,81 @@
 <!DOCTYPE html>
+<!-- landing page -->
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Due Now: do your due tasks now</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   </head>
   <body>
-    <header>
+    <header class="mainHeader">
+        <a href="home.html"><img src="img/logo.png" alt="Due Now" class="topNav_logo"></a>
       <nav class="topNav">
-        <img src="" alt="" class="topNav_logo">
         <ul class="topNav_list">
-          <li class="topNav_item">Login</li>
-          <li class="topNav_item">Signup</li>
+          <li class="topNav_item"><a href="#login">Login</a></li>
+          <li class="topNav_item cta"><a href="#signup">Sign Up</a></li>
         </ul>
       </nav>
     </header>
     <main class="wrapper">
-      <div class="intro">		</div>
-      <div class="services"></div>
-      <div class="login"></div>
+      <div id="intro">
+        <h1>Do your due tasks now.</h1>
+        <p class="intro_text">Due Now helps you <strong>manage your time wisely</strong><br>by <strong>giving you suggestions</strong> on which tasks to finish first.</p>
+      </div>
+      <div id="services">
+        <div class="service">
+          <div class="placeholder circle"></div>
+          <h2>Set priority and difficulty.</h2>
+          <p>Categorize your tasks based on how hard or how urgent you need it done.</p>
+        </div>
+        <div class="service">
+          <div class="placeholder circle"></div>
+          <h2>Get notified of deadlines.</h2>
+          <p>Get push notifications when due dates are near.</p>
+        </div>
+        <div class="service">
+          <div class="placeholder circle"></div>
+          <h2>Know when to start your tasks.</h2>
+          <p>Get suggestions on which tasks to start first based on priority or difficulty.</p>
+        </div>
+
+        <a href="features.html" class="button">See more features</a>
+      </div>
+      <div id="login_signup">
+        <div id="signup">
+          <h1>Sign Up</h1>
+          <input type="text" name="full name" placeholder="full name" required>
+          <input type="email" name="email" placeholder="email address" required>
+          <input type="password" name="password" id="password" placeholder="password" required>
+          <input type="password" name="retype" id="confirm_password" placeholder="re-type password" required>
+          <input class="button" type="submit" value="Start Working">
+        </div>
+        <div class="vertical_line"></div>
+        <div id="login">
+          <h1>Log In</h1>
+          <input type="email" name="email" placeholder="email address" required>
+          <input type="password" name="password" placeholder="password" required>
+          <input class="button" type="submit" value="Resume Work">
+        </div>
+      </div>
+
+      <footer>
+        <div class="links">
+          <a href="about.html">About</a>
+          <a href="features.html">Features</a>
+        </div>
+        <img src="img/logo-circle.png">
+        <div class="social_media">
+          <a href="#"><i class="fa fa-facebook-square"></i></a>
+          <a href="#"><i class="fa fa-twitter-square"></i></a>
+          <a href="#"><i class="fa fa-github-square"></i></a>
+          <a href="#"><i class="fa fa-envelope-square"></i></a>
+        </div>
+      </footer>
     </main>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
