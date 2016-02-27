@@ -30,7 +30,7 @@ public class Task {
     boolean isFinished;
     Date timeStarted;
     //String[] weeks = {"M", "T", "W", "Th", "F", "S", "Sun"};
-    
+
     public Task(String name, String t, Date d, Date de, int diff, String prio){
         this.name = name;
         task = t;
@@ -38,15 +38,9 @@ public class Task {
         deadline = de;
         diffLvl = diff;
         prioLvl = getPrioLevel(prio);
-        //answers = timeToStart(getDay(deadline), getDay(dayAssigned), getDuration(diffLvl, task), timeOfFinishing(getDay(dayAssigned), getDuration(diffLvl, task)));
-        
+
     }
-    
-//    private Date dateMaker(String date){
-//        String[] inputs = date.split(" ");
-//        return new GregorianCalendar(inputs[0], inputs[1], inputs[2]).getTime();
-//    }
-    
+
     public void startTask(){
         hasStarted = true;
         timeStarted = Calendar.getInstance().getTime();
@@ -58,15 +52,15 @@ public class Task {
             //else resetTimer
         //incorporate percentage
     }
-    
+
     public void endTask(){
         isFinished = true;
         //delete said task from linkedlist
         //next task that needs to be done will pop up with remaining time left
         //would you like to start now?
-        
+
     }
-    
+
     private int getPrioLevel(String level){
         int prioLevel = 0;
         switch(level){
@@ -84,35 +78,7 @@ public class Task {
         }
         return prioLevel;
     }
-    
-//    private int getDay(String day){
-//        int dayInt = 0;
-//        switch(day){
-//            case "Monday":
-//                dayInt = 1;
-//                break;
-//            case "Tuesday":
-//                dayInt = 2;
-//                break;
-//            case "Wednesday":
-//                dayInt = 3;
-//                break;
-//            case "Thursday":
-//                dayInt = 4;
-//                break;
-//            case "Friday":
-//                dayInt = 5;
-//                break;
-//            case "Saturday":
-//                dayInt = 6;
-//                break;
-//            case "Sunday":
-//                dayInt = 7;
-//                break;
-//        }
-//        return dayInt*24;
-//    }
-    
+
     private double getDuration(int diffLevel,String task){
            switch(diffLevel){
                case 1:
@@ -127,15 +93,15 @@ public class Task {
                    return getTypeOfTask(task)*1.75;
                 default:
                    break;
-                   
+
            }
            return 0;
     }
-    
+
     public double returnDuration(){
         return getDuration(diffLvl, task);
     }
-    
+
     //returns num of hours it takes to do a task
     private static int getTypeOfTask(String task){
         int daysForTask = 0;
@@ -167,7 +133,7 @@ public class Task {
         }
         return daysForTask*24;
     }
-    
+
     private int getIncrement(int numOfDays){
         switch (numOfDays) {
             case 0:
@@ -178,7 +144,7 @@ public class Task {
                 return getIncrement(numOfDays - 1) + getIncrement(numOfDays - 2);
         }
     }
-    
+
 //    private int getDuration(String task, int diffLvl){
 //        return  diffLvl * getTypeOfTask(task);
 //    }
@@ -187,14 +153,14 @@ public class Task {
         //in days
         return (int) ((dayStarted + duration)/24);
     }
-    
+
     private Queue<Date> timeToStart(Date deadline, Date dayAssigned, int duration){ //must include prioLvl
         //System.out.println(timeOfFinishing + "tof");
         int howManyTask = (int) (getTimeLeft(deadline, dayAssigned)/(duration)); //numOfDay*24 - numOfDay*24
         timeToStart = new LinkedList<>();
         Calendar cal = Calendar.getInstance(); // creates calendar
         cal.setTime(dayAssigned); // sets calendar time/date
-        for(int i = 0; i < howManyTask; i++){ 
+        for(int i = 0; i < howManyTask; i++){
             cal.add(Calendar.HOUR_OF_DAY, duration);
             //cal.setTime(cal.getTime());
             timeToStart.add(cal.getTime());// returns new date object, one hour in the future
@@ -203,31 +169,26 @@ public class Task {
         }
         return timeToStart;
     }
-    
+
     public Queue<Date> returnQueue(){
         return timeToStart(deadline, dayAssigned, (int) getDuration(diffLvl, task));
     }
-    
+
     public Date chosenDate(){
         return returnQueue().peek();
     }
-    
+
     private static int getTimeLeft(Date deadline, Date dayAssigned){
         long diff = Math.abs(deadline.getTime() - dayAssigned.getTime());
         long diffHours = diff/(60 * 60 * 1000); //returns hours
         return (int) diffHours;
     }
-    
+
     public int getTimeLeft(Date deadline){
         long diff = Math.abs(deadline.getTime() - Calendar.getInstance().getTime().getTime());
         long diffHours = diff/(60 * 60 * 1000); //returns hours
         return (int) diffHours;
     }
-    
-//    public int[] returnAnswers(){
-//        return ;
-//    }
-    
     public static void main(String[] args){
         //Algorithms(String t, String d, String de, int diff, int prio)
         //Algorithms algo = new Algorithms("Paper", "Monday", "Friday", 3, "High");
@@ -243,6 +204,3 @@ public class Task {
 //        });
         }
     }
-    
-
-
