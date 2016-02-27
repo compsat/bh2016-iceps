@@ -26,6 +26,9 @@ public class Task {
     int prioLvl;
     int[] answers;
     Queue<Date> timeToStart;
+    boolean hasStarted;
+    boolean isFinished;
+    Date timeStarted;
     //String[] weeks = {"M", "T", "W", "Th", "F", "S", "Sun"};
     
     public Task(String name, String t, Date d, Date de, int diff, String prio){
@@ -43,6 +46,26 @@ public class Task {
 //        String[] inputs = date.split(" ");
 //        return new GregorianCalendar(inputs[0], inputs[1], inputs[2]).getTime();
 //    }
+    
+    public void startTask(){
+        hasStarted = true;
+        timeStarted = Calendar.getInstance().getTime();
+        //here, the app counts down from start time until supposed end time
+        //after supposed end time, will ask, "Are you done?"
+        //if yes, hurrah!
+        //if no, how much time do you need?
+            //if > timeLeft, GAGO
+            //else resetTimer
+        //incorporate percentage
+    }
+    
+    public void endTask(){
+        isFinished = true;
+        //delete said task from linkedlist
+        //next task that needs to be done will pop up with remaining time left
+        //would you like to start now?
+        
+    }
     
     private int getPrioLevel(String level){
         int prioLevel = 0;
@@ -171,11 +194,10 @@ public class Task {
         timeToStart = new LinkedList<>();
         Calendar cal = Calendar.getInstance(); // creates calendar
         cal.setTime(dayAssigned); // sets calendar time/date
-        for(int i = 0; i < howManyTask; i++){
-            
-            cal.add(Calendar.HOUR_OF_DAY, duration);// adds one hour
-            timeToStart.add(cal.getTime());
-            cal.setTime(cal.getTime());// returns new date object, one hour in the future
+        for(int i = 0; i < howManyTask; i++){ 
+            cal.add(Calendar.HOUR_OF_DAY, duration);
+            //cal.setTime(cal.getTime());
+            timeToStart.add(cal.getTime());// returns new date object, one hour in the future
             //System.out.println((timeOfFinishing/24*i) + "tof");
            // System.out.println(timeToStart[i] + " " + i);
         }
@@ -184,6 +206,10 @@ public class Task {
     
     public Queue<Date> returnQueue(){
         return timeToStart(deadline, dayAssigned, (int) getDuration(diffLvl, task));
+    }
+    
+    public Date chosenDate(){
+        return returnQueue().peek();
     }
     
     private static int getTimeLeft(Date deadline, Date dayAssigned){
