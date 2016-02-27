@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard | Due Now</title>
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  </head>
+  <body>
+    <header class="mainHeader">
+        <a href="home.html"><img src="img/logo.png" alt="Due Now" class="topNav_logo"></a>
+      <nav class="topNav topNav_dropdown">
+        <a href="#"><img src="img/my-account.png" class="myAccount"> My Account&nbsp;<i class="fa fa-chevron-down"></i></a>
+        <ul class="hidden dropdown">
+          <li><a href="#">Preferences</a></li>
+          <li><a href="#">Account Settings</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="workWrapper">
+      <div class="taskList">
+        <div id="ongoing_tasks" class="task_group">
+          <h2>Ongoing Tasks</h2>
+        </div>
+        <div id="unfinished_tasks" class="task_group">
+          <h2>Unfinished Tasks</h2>
+        </div>
+      </div>
+      <div class="workingArea"></div>
+    </main>
+    <script src="js/jquery-2.1.4.js"></script>
+  </body>
+</html>
