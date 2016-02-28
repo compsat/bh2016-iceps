@@ -20,7 +20,7 @@
         <ul class="hidden dropdown">
           <li><a id="preferencesModal" href="#preferences">Preferences</a></li>
           <li><a id="settingsModal" href="#settings">Account Settings</a></li>
-          <li><a href="index.html">Log Out</a></li>
+          <li><a href="index.html" id="logout">Log Out</a></li>
         </ul>
       </nav>
     </header>
@@ -94,10 +94,10 @@
           <h1>Add Task</h1>
           <hr>
           <form id="new_task">
-            <input type="text" name="task_name" class="task_name" placeholder="Set task name"> <a href="#"><i class="fa fa-edit"></i></a>
+            <input type="text" name="task_name" class="task_name" placeholder="Set task name" id="task_name"> <a href="#"><i class="fa fa-edit"></i></a>
             <br>
             <div class="input_group">
-              <select name="task_type" class="task_type" form="new_task">
+              <select name="task_type" class="task_type" form="new_task" id="task_type">
                 <option>Homework</option>
                 <option>Reading</option>
                 <option>Quiz</option>
@@ -105,28 +105,28 @@
                 <option>Orals</option>
                 <option>Exam</option>
               </select>
-              <select name="difficulty_lvl" class="difficulty_lvl" form="new_task">
-                <option>Difficulty Level 1</option>
-                <option>Difficulty Level 2</option>
-                <option>Difficulty Level 3</option>
-                <option>Difficulty Level 4</option>
-                <option>Difficulty Level 5</option>
+              <select name="difficulty_lvl" class="difficulty_lvl" form="new_task" id="diff_level">
+                <option value="1">Difficulty Level 1</option>
+                <option value="2">Difficulty Level 2</option>
+                <option value="3">Difficulty Level 3</option>
+                <option value="4">Difficulty Level 4</option>
+                <option value="5">Difficulty Level 5</option>
               </select>
             </div>
             <div class="input_group">
-              <select name="priority_lvl" class="priority_lvl" form="new_task">
-                <option>Low Priority</option>
-                <option>Medium Priority</option>
-                <option>High Priority</option>
+              <select name="priority_lvl" class="priority_lvl" form="new_task" id="prio_level">
+                <option value="1">Low Priority</option>
+                <option value="2">Medium Priority</option>
+                <option value="3">High Priority</option>
               </select>
-              <input type="text" id="datepicker" form="new_task" placeholder="Deadline"> <!-- fix CSS of this -->
+              <input type="date" id="datepicker" form="new_task" placeholder="Deadline"> <!-- fix CSS of this -->
             </div>
             <div class="input_group">
-              <textarea wrap="soft" name="task_description" class="task_description" rows="7" cols="76" form="new_task" placeholder="Add quick description (optional)"></textarea>
+              <textarea id="task_desc" wrap="soft" name="task_description" class="task_description" rows="7" cols="76" form="new_task" placeholder="Add quick description (optional)"></textarea>
             </div>
             <div class="form_buttons">
-              <input class="button danger" type="submit" value="Clear Fields">
-              <input class="button" type="submit" value="Add Task">
+              <input class="button danger" type="submit" value="Clear Fields" id="clear">
+              <input class="button" type="submit" value="Add Task" id="add">
             </form>
             </div>
         </div>
@@ -147,6 +147,9 @@
     </main>
     <script src="js/jquery-2.1.4.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-latest.js" charset="utf-8"></script>
+    <script src="js/dashboard.js" charset="utf-8"></script>
+    <script src="js/task.js" charset="utf-8"></script>
     <script type="text/javascript">
       var dashMenu = ['preferences', 'settings'];
       // Get the modal
@@ -158,7 +161,7 @@
       // Get the <span> element that closes the modal
       var span1 = document.getElementsByClassName("close")[0];
       var span2 = document.getElementsByClassName("close")[1];
-      // When the user clicks on the button, open the modal 
+      // When the user clicks on the button, open the modal
       button1.onclick = function() {
         modal1.style.display = "block";
       }
