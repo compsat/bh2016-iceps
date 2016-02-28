@@ -105,12 +105,24 @@ var createTask = function(arr){
   console.log(typeof local.timeToStart);
 
   addTask(local,arr);
+  var locEl = document.createElement('label');
+  var locElInput = document.createElement('input');
+  locElInput.setAttribute('type','checkbox');
+  locElInput.setAttribute('class','task');
+  locElInput.innerHTML = local.name;
+  locEl.appendChild(locElInput);
+  var root = document.getElementById('today');
+  appendToDiv(root,locEl);
 };
 var createBtn = document.getElementById('add');
 createBtn.addEventListener('click', function(event){
   event.preventDefault();
   createTask(locArr);
 });
+
+function appendToDiv(root,child){
+  root.appendChild(child);
+}
 
 function addTask(localTask, localTaskArr){
   if(localTaskArr.length == 0){
