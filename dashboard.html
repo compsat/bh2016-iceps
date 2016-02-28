@@ -79,28 +79,28 @@
       <div class="taskList">
         <div id="ongoing_tasks" class="task_group">
           <div class="task_group_header">
-            <h2>Ongoing Tasks</h2> <a href="#"><i class="fa fa-edit"></i></a>
+            <h2>Ongoing Tasks</h2> <a class="edit_task" href="#"><i class="fa fa-edit"></i></a>
           </div>
           <hr>
           <h4>TODAY</h4>
-          <label><input type="checkbox" class="task"> Insert task here<br></label>
-          <label><input type="checkbox" class="task"> Another task is here<br></label>
+          <label><input type="checkbox" class="task"> Insert task here <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
+          <label><input type="checkbox" class="task"> Another task is here <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
           <h4>TOMORROW</h4>
-          <label><input type="checkbox" class="task"> More tasks for tomorrow<br></label>
-          <label><input type="checkbox" class="task"> I hope I don't die<br></label>
+          <label><input type="checkbox" class="task"> More tasks for tomorrow <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
+          <label><input type="checkbox" class="task"> I hope I don't die <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
         </div>
         <div id="unfinished_tasks" class="task_group">
           <div class="task_group_header">
-            <h2>Unfinished Tasks</h2> <a href="#"><i class="fa fa-edit"></i></a>
+            <h2>Unfinished Tasks</h2> <a class="edit_task" href="#"><i class="fa fa-edit"></i></a>
           </div>
           <hr>
           <h4>MONDAY, Feb 29</h4>
-          <label><input type="checkbox" class="task"> Insert task here<br></label>
-          <label><input type="checkbox" class="task"> Another task is here<br></label>
+          <label><input type="checkbox" class="task"> Insert task here <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
+          <label><input type="checkbox" class="task"> Another task is here <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
           <h4>FRIDAY, Mar 4</h4>
-          <label><input type="checkbox" class="task"> More tasks for tomorrow<br></label>
-          <label><input type="checkbox" class="task"> Hope is not lost<br></label>
-          <label><input type="checkbox" class="task"> I can get through this<br></label>
+          <label><input type="checkbox" class="task"> More tasks for tomorrow <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
+          <label><input type="checkbox" class="task"> Hope is not lost <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
+          <label><input type="checkbox" class="task"> I can get through this <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
           <label><input type="checkbox" class="task"> Kakayanin<br></label>
         </div>
       </div>
@@ -251,7 +251,24 @@
             });
           }
         });
-      });
+
+        $('#ongoing_tasks .edit_task').click(function() {
+          if ($('#ongoing_tasks .editing').css('display') != 'none' ) {
+            $('#ongoing_tasks .editing').css({'display':'none'});  
+          } else {
+            $('#ongoing_tasks .editing').css({'display':'initial'});
+          }
+        });
+
+        $('#unfinished_tasks .edit_task').click(function() {
+          if ($('#unfinished_tasks .editing').css('display') != 'none' ) {
+            $('#unfinished_tasks .editing').css({'display':'none'});  
+          } else {
+            $('#unfinished_tasks .editing').css({'display':'initial'});
+          }
+        });
+
+      }); // end of jQuery
     </script>
   </body>
 </html>

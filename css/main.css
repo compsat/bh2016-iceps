@@ -451,6 +451,20 @@ hr {
     .task {
       border: 2px solid #8D99AE;
     }
+      .editing {
+        display: none;
+      }
+        .editing a {
+          font-size: initial;
+        }
+
+        .editing .fa-cog {
+          color: #8D99AE;
+        }
+
+        .editing .fa-close {
+          color: #FF383E;
+        }
 
   .workingArea {
     width: 70%;
