@@ -105,7 +105,7 @@ a:hover {
 }
   
   .wrapper > div {
-    padding: 4em 0;
+    padding: 3em 5em;
   }
 
 #intro {
@@ -130,8 +130,6 @@ a:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  padding-left: 5em;
-  padding-right: 5em;
 }
 
   /*TEMPORARY*/
@@ -230,7 +228,19 @@ footer {
 /*
  * Features.html
  */
-#features {}
+#features {
+  background-color: #2B2D42;
+  text-align: center;
+}
+  #features > h1 {
+    color: #EDF2F4;
+  }
+
+  #features .service {
+    width: 50%;
+  }
+
+  
 
 
 /*
