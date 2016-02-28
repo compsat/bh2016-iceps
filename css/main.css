@@ -8,6 +8,9 @@ body {
   line-height: 175%;
   overflow-x: hidden;
   color: #1a1a1a;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 h1, h2, h3 {
@@ -102,6 +105,7 @@ a:hover {
 .wrapper {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
   
   .wrapper > div {
@@ -111,6 +115,7 @@ a:hover {
 #intro {
   background-color: #8D99AE;
   text-align: center;
+  flex: 1;
 }
 
   #intro h1 {
@@ -132,18 +137,10 @@ a:hover {
   align-items: flex-start;
 }
 
-  /*TEMPORARY*/
-  .placeholder {
-    background-color: white;
+  .service img {
     width: 7em;
-    height: 7em;
     margin: 0 auto;
   }
-
-  .circle {
-    border-radius: 50%;
-  }
-  /*END TEMPORARY*/
 
   .service {
     flex-grow: 2;
@@ -231,16 +228,57 @@ footer {
 #features {
   background-color: #2B2D42;
   text-align: center;
+  border-bottom: 2px rgba(0,0,0,0.1) solid;
+  flex: 1;
 }
   #features > h1 {
     color: #EDF2F4;
   }
 
   #features .service {
+    margin: 0 auto;
     width: 50%;
+    display: flex;
+    flex-wrap: no-wrap;
+    align-items: flex-start;
   }
 
-  
+  #features .service .circle {
+    flex: 1 0 auto;
+    margin: 1em;
+    align-self: flex-start;
+  }
+
+  #features p {
+    color: #EDF2F4;
+  }
+
+/*
+ * About.html
+ */
+#about {
+  padding: 4em 5em;
+  background-color: #8D99AE;
+  flex: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+  #about > div > h2 {
+    color: #EDF2F4;
+  }
+
+  #about >div > h4 {
+    margin: 0.5em 0 0;
+  }
+
+  #about > div {
+    width: 45%;
+  }
+
+  .about_us {
+    align-self: flex-end;
+  }
 
 
 /*
@@ -318,6 +356,7 @@ hr {
   .close {
     color: #282d42;
     float: right;
+    margin: 10px;
     font-size: 28px;
     font-weight: bold;
   }
@@ -328,6 +367,46 @@ hr {
     text-decoration: none;
     cursor: pointer;
   }
+
+  .modal label {
+    display: block;
+    padding-left: -15px;
+    padding-right: -15px;
+  }
+
+  input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -5px;
+    overflow: hidden;
+  }
+
+  .modal input[type="text"]:not([name="noOfHours"]),
+  .modal input[type="password"] {
+    margin: 0.5em 0;
+    width: 75%;
+  }
+
+  .modal label input[type="text"] {
+    width: 7%;
+  }
+
+  .modal h3 {
+    margin-bottom: 0em;
+  }
+
+  .modal a {
+    color: #282d42;
+  }
+
+  .modal a:hover {
+    text-decoration: underline;
+  }
+
 
 .workWrapper {
   display: flex;
@@ -372,6 +451,20 @@ hr {
     .task {
       border: 2px solid #8D99AE;
     }
+      .editing {
+        display: none;
+      }
+        .editing a {
+          font-size: initial;
+        }
+
+        .editing .fa-cog {
+          color: #8D99AE;
+        }
+
+        .editing .fa-close {
+          color: #FF383E;
+        }
 
   .workingArea {
     width: 70%;

@@ -1,0 +1,18 @@
+Account Settings
+
+--Profile Account--
+Change Name
+Update Email Address
+Add Backup Email Address
+Change Password
+Confirm Password
+Old Password
+Disable/Delete Account
+
+--Task Manager--
+Clear All Tasks
+Allow Desktop Notifications
+
+
+
+

@@ -32,8 +32,24 @@
         <div class="app_settings">
           <h2>App Preferences</h2>
           <hr>
-          <input type="checkbox"> mute notifications
-          <!-- place more settings here -->
+          <label><input type="radio" name="notifs"> mute notifications</label>
+          <label><input type="radio" name="notifs"> Notify me every <input type="text" name="noOfHours" placeholder="12" disabled> hours.<br></label>
+          <h3>Organize my tasks...</h3>
+          <hr>
+          <form>
+            <label><input type="radio" name="taskPref"> according to the <strong>recommended time to start</strong> based on previous finished tasks</label>
+            <label><input type="radio" name="taskPref"> according to the <select name="category" disabled>
+              <option>start time</option>
+              <option>priority</option>
+              <option>difficulty</option>
+              <option>duration</option>
+            </select> of the task</label>
+            <label><input type="radio" name="taskPref"> according to the <strong>deadline</strong> of each task</label>
+          </form>
+          <h3>Due Now Tasks</h3>
+          <hr>
+          <label><input type="checkbox" name="desktopNotifs"> allow desktop notifications</label>
+          <a href="#">Clear all tasks</a>
         </div>
       </div>
     </div>
@@ -44,8 +60,19 @@
         <div class="app_settings">
           <h2>Account Settings</h2>
           <hr>
-          <input type="checkbox"> <strong>cramming mode</strong>
-          <!-- place more settings here -->
+          <label><input type="checkbox"> <strong>cramming mode</strong></label>
+          <h3>Profile Account</h3>
+          <hr>
+          <input type="text" name="newName" placeholder="Change full name"><br>
+          <input type="text" name="newEmail" placeholder="Update email address"><br>
+          <input type="text" name="addEmail" placeholder="Add backup email address"><br>
+          <fieldset>
+            <legend>Change password:</legend>
+            <input type="password" name="oldPass" placeholder="Old Password" required>
+            <input type="password" name="changePass" placeholder="Change password" required><br>
+            <input type="password" name="confirmChangePass" placeholder="Confirm password" required><br>
+          </fieldset>
+          <a href="#">Disable/Delete Account</a>
         </div>
       </div>
     </div>
@@ -54,29 +81,29 @@
       <div class="taskList">
         <div id="ongoing_tasks" class="task_group">
           <div class="task_group_header">
-            <h2>Ongoing Tasks</h2> <a href="#"><i class="fa fa-edit"></i></a>
+            <h2>Ongoing Tasks</h2> <a class="edit_task" href="#"><i class="fa fa-edit"></i></a>
           </div>
           <hr>
           <h4>TODAY</h4>
-          <input type="checkbox" class="task"> Insert task here<br>
-          <input type="checkbox" class="task"> Another task is here<br>
+          <label><input type="checkbox" class="task"> Insert task here <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
+          <label><input type="checkbox" class="task"> Another task is here <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
           <h4>TOMORROW</h4>
-          <input type="checkbox" class="task"> More tasks for tomorrow<br>
-          <input type="checkbox" class="task"> I hope I don't die<br>
+          <label><input type="checkbox" class="task"> More tasks for tomorrow <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
+          <label><input type="checkbox" class="task"> I hope I don't die <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
         </div>
         <div id="unfinished_tasks" class="task_group">
           <div class="task_group_header">
-            <h2>Unfinished Tasks</h2> <a href="#"><i class="fa fa-edit"></i></a>
+            <h2>Unfinished Tasks</h2> <a class="edit_task" href="#"><i class="fa fa-edit"></i></a>
           </div>
           <hr>
           <h4>MONDAY, Feb 29</h4>
-          <input type="checkbox" class="task"> Insert task here<br>
-          <input type="checkbox" class="task"> Another task is here<br>
+          <label><input type="checkbox" class="task"> Insert task here <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
+          <label><input type="checkbox" class="task"> Another task is here <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
           <h4>FRIDAY, Mar 4</h4>
-          <input type="checkbox" class="task"> More tasks for tomorrow<br>
-          <input type="checkbox" class="task"> Hope is not lost<br>
-          <input type="checkbox" class="task"> I can get through this<br>
-          <input type="checkbox" class="task"> Kakayanin<br>
+          <label><input type="checkbox" class="task"> More tasks for tomorrow <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
+          <label><input type="checkbox" class="task"> Hope is not lost <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
+          <label><input type="checkbox" class="task"> I can get through this <span class="editing"><a href="#"><i class="fa fa-cog"></i></a> <a href="#"><i class="fa fa-close"></i></a></span><br></label>
+          <label><input type="checkbox" class="task"> Kakayanin<br></label>
         </div>
       </div>
       <div class="workingArea">
@@ -185,9 +212,58 @@
         }
       }
 
-      // $(function () {
-      //   $('#datepicker').datepicker();
-      // });
+      $(function () {
+        $('#datepicker').datepicker();
+
+        $('#preferences input[name="notifs"]').click(function (e) {
+          // if notifs was chosen
+          if ($('#preferences input[name="noOfHours"]').prop('disabled') == false) {
+            $('#preferences input[name="noOfHours"]').prop({
+              'disabled': true,
+              'value':null
+            });
+          } else {
+            $('#preferences input[name="noOfHours"]').prop({
+              'disabled': false,
+              'value':12
+          });
+          }
+
+        });
+
+
+        $('#preferences input[type="radio"][name="taskPref"]').click(function (e) {
+          // if task category was checked
+          if ($('#preferences select[name="category"]').prop('disabled') == false) {
+            $('#preferences select[name="category"]').prop({
+              'disabled':true
+            });
+          } else {
+            $('#preferences select[name="category"]').prop({
+              'disabled':false
+            });
+          }
+        });
+
+        $('#ongoing_tasks .edit_task').click(function (e) {
+          e.preventDefault();
+          if ($('#ongoing_tasks .editing').css('display') != 'none' ) {
+            $('#ongoing_tasks .editing').css({'display':'none'});
+          } else {
+            $('#ongoing_tasks .editing').css({'display':'initial'});
+          }
+        });
+
+        $('#unfinished_tasks .edit_task').click(function (e) {
+          e.preventDefault();
+          if ($('#unfinished_tasks .editing').css('display') != 'none' ) {
+            $('#unfinished_tasks .editing').css({'display':'none'});
+          } else {
+            $('#unfinished_tasks .editing').css({'display':'initial'});
+          }
+        });
+
+      }); // end of jQuery
     </script>
   </body>
 </html>
