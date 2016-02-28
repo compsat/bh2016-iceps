@@ -32,9 +32,22 @@
         <div class="app_settings">
           <h2>App Preferences</h2>
           <hr>
-          <label><input type="checkbox"> mute notifications</label>
+          <label><input type="checkbox" name="notifs"> mute notifications</label>
           <label><input type="checkbox" name="hours"> Notify me every <input type="text" name="noOfHours" placeholder="12" disabled> hours.<br></label>
-          <label></label>
+          <h3>Organize my tasks...</h3>
+          <hr>
+            <label><input type="checkbox" name="taskTrust"> according to the <strong>recommended time to start</strong> based on previous finished tasks</label>
+            <label><input type="checkbox" name="taskCategory"> according to the <select name="category" disabled>
+              <option>start time</option>
+              <option>priority</option>
+              <option>difficulty</option>
+              <option>duration</option>
+            </select> of the task</label>
+            <label><input type="checkbox" name="taskWeekly"> according to the <strong>deadline</strong> of each task</label>
+          <h3>Due Now Tasks</h3>
+          <hr>
+          <label><input type="checkbox" name="desktopNotifs"> allow desktop notifications</label>
+          <a href="#">Clear all tasks</a>
         </div>
       </div>
     </div>
@@ -46,7 +59,18 @@
           <h2>Account Settings</h2>
           <hr>
           <label><input type="checkbox"> <strong>cramming mode</strong></label>
-          <!-- place more settings here -->
+          <h3>Profile Account</h3>
+          <hr>
+          <input type="text" name="newName" placeholder="Change full name"><br>
+          <input type="text" name="newEmail" placeholder="Update email address"><br>
+          <input type="text" name="addEmail" placeholder="Add backup email address"><br>
+          <fieldset>
+            <legend>Change password:</legend>
+            <input type="password" name="oldPass" placeholder="Old Password" required>
+            <input type="password" name="changePass" placeholder="Change password" required><br>
+            <input type="password" name="confirmChangePass" placeholder="Confirm password" required><br>
+          </fieldset>
+          <a href="#">Disable/Delete Account</a>
         </div>
       </div>
     </div>
@@ -190,10 +214,42 @@
         $('#datepicker').datepicker();
 
         $('#preferences input[name="hours"]').click(function () {
-          $('#preferences input[name="hours"] + input[type="text"]').prop({
-            'disabled':false,
-            'value':12
-          });
+          // if remind me in X hours is checked
+          if ($('#preferences input[name="hours"] + input[type="text"]').prop('disabled') == false) {
+            $('#preferences input[name="hours"] + input[type="text"]').prop({
+              'disabled':true,
+              'value':null
+            });
+          } else {
+            $('#preferences input[name="hours"] + input[type="text"]').prop({
+              'disabled':false,
+              'value':12
+            });
+          }
+        });
+
+        $('#preferences input[name="notifs"]').click(function() {
+          // if "mute notifs" was checked
+          var textbox = $('#preferences input[name="hours"] + input[type="text"]').prop('disabled');
+          if($('#preferences input[name="hours"]').prop('disabled') == false) {
+            $('#preferences input[name="hours"]').prop('disabled', true);
+            $('#preferences input[name="hours"] + input[type="text"]').prop('disabled', !textbox);
+          } else {
+            $('#preferences input[name="hours"]').prop('disabled', false);
+          }
+        });
+
+        $('#preferences input[name="taskCategory"]').click(function () {
+          // if task category was checked
+          if ($('#preferences input[name="taskCategory"] + select[name="category"]').prop('disabled') == false) {
+            $('#preferences input[name="taskCategory"] + select[name="category"]').prop({
+              'disabled':true
+            });
+          } else {
+            $('#preferences input[name="taskCategory"] + select[name="category"]').prop({
+              'disabled':false
+            });
+          }
         });
       });
     </script>
