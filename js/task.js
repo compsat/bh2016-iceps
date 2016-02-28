@@ -1,4 +1,4 @@
-var Task = Parse.Object.extend("Task",{
+var Task = new Parse.Object.extend("Task",{
   startTask: function(){
     this.hasStarted = true;
     this.timeStarted = moment().now();
