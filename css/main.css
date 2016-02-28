@@ -359,6 +359,12 @@ hr {
     overflow: hidden;
   }
 
+  .modal input[type="text"]:not([name="noOfHours"]),
+  .modal input[type="password"] {
+    margin: 0.5em 0;
+    width: 75%;
+  }
+
   .modal label input[type="text"] {
     width: 7%;
   }
@@ -374,6 +380,7 @@ hr {
   .modal a:hover {
     text-decoration: underline;
   }
+
 
 .workWrapper {
   display: flex;
