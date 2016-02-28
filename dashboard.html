@@ -36,14 +36,16 @@
           <label><input type="checkbox" name="hours"> Notify me every <input type="text" name="noOfHours" placeholder="12" disabled> hours.<br></label>
           <h3>Organize my tasks...</h3>
           <hr>
-            <label><input type="checkbox" name="taskTrust"> according to the <strong>recommended time to start</strong> based on previous finished tasks</label>
-            <label><input type="checkbox" name="taskCategory"> according to the <select name="category" disabled>
+          <form>
+            <label><input type="radio" name="taskPref"> according to the <strong>recommended time to start</strong> based on previous finished tasks</label>
+            <label><input type="radio" name="taskPref"> according to the <select name="category" disabled>
               <option>start time</option>
               <option>priority</option>
               <option>difficulty</option>
               <option>duration</option>
             </select> of the task</label>
-            <label><input type="checkbox" name="taskWeekly"> according to the <strong>deadline</strong> of each task</label>
+            <label><input type="radio" name="taskPref"> according to the <strong>deadline</strong> of each task</label>
+          </form>
           <h3>Due Now Tasks</h3>
           <hr>
           <label><input type="checkbox" name="desktopNotifs"> allow desktop notifications</label>
@@ -213,8 +215,9 @@
       $(function () {
         $('#datepicker').datepicker();
 
-        $('#preferences input[name="hours"]').click(function () {
+        $('#preferences input[name="hours"]').click(function (e) {
           // if remind me in X hours is checked
+          e.preventDefault();
           if ($('#preferences input[name="hours"] + input[type="text"]').prop('disabled') == false) {
             $('#preferences input[name="hours"] + input[type="text"]').prop({
               'disabled':true,
@@ -228,8 +231,9 @@
           }
         });
 
-        $('#preferences input[name="notifs"]').click(function() {
+        $('#preferences input[name="notifs"]').click(function (e) {
           // if "mute notifs" was checked
+          e.preventDefault();
           var textbox = $('#preferences input[name="hours"] + input[type="text"]').prop('disabled');
           if($('#preferences input[name="hours"]').prop('disabled') == false) {
             $('#preferences input[name="hours"]').prop('disabled', true);
@@ -239,20 +243,21 @@
           }
         });
 
-        $('#preferences input[name="taskCategory"]').click(function () {
+        $('#preferences input[type="radio"][name="taskPref"]').click(function (e) {
           // if task category was checked
-          if ($('#preferences input[name="taskCategory"] + select[name="category"]').prop('disabled') == false) {
-            $('#preferences input[name="taskCategory"] + select[name="category"]').prop({
+          if ($('#preferences select[name="category"]').prop('disabled') == false) {
+            $('#preferences select[name="category"]').prop({
               'disabled':true
             });
           } else {
-            $('#preferences input[name="taskCategory"] + select[name="category"]').prop({
+            $('#preferences select[name="category"]').prop({
               'disabled':false
             });
           }
         });
 
-        $('#ongoing_tasks .edit_task').click(function() {
+        $('#ongoing_tasks .edit_task').click(function (e) {
+          e.preventDefault();
           if ($('#ongoing_tasks .editing').css('display') != 'none' ) {
             $('#ongoing_tasks .editing').css({'display':'none'});  
           } else {
@@ -260,7 +265,8 @@
           }
         });
 
-        $('#unfinished_tasks .edit_task').click(function() {
+        $('#unfinished_tasks .edit_task').click(function (e) {
+          e.preventDefault();
           if ($('#unfinished_tasks .editing').css('display') != 'none' ) {
             $('#unfinished_tasks .editing').css({'display':'none'});  
           } else {
