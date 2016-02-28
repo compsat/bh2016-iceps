@@ -109,8 +109,8 @@ var createTask = function(arr){
   var locElInput = document.createElement('input');
   locElInput.setAttribute('type','checkbox');
   locElInput.setAttribute('class','task');
-  locElInput.innerHTML = local.name;
-  locEl.appendChild(locElInput);
+  locEl.innerHTML = '<span>'+local.name+'</local>';
+  locEl.insertBefore(locElInput);
   var root = document.getElementById('today');
   appendToDiv(root,locEl);
 };
