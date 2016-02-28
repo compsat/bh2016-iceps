@@ -217,7 +217,6 @@
 
         $('#preferences input[name="hours"]').click(function (e) {
           // if remind me in X hours is checked
-          e.preventDefault();
           if ($('#preferences input[name="hours"] + input[type="text"]').prop('disabled') == false) {
             $('#preferences input[name="hours"] + input[type="text"]').prop({
               'disabled':true,
@@ -233,7 +232,6 @@
 
         $('#preferences input[name="notifs"]').click(function (e) {
           // if "mute notifs" was checked
-          e.preventDefault();
           var textbox = $('#preferences input[name="hours"] + input[type="text"]').prop('disabled');
           if($('#preferences input[name="hours"]').prop('disabled') == false) {
             $('#preferences input[name="hours"]').prop('disabled', true);
