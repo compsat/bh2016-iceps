@@ -1,0 +1,8 @@
+About Due Now:
+	Due Now is an app that organizes your tasks for you! 
+	Powered by various algorithms used in time management, Due Now allows you to just sit back, relax, and watch as the app take all the tasks you need done and plot it at the most feasible parts of your week. With its customized notification system, you'll never miss a deadline, or end up cramming your tasks an impossible period of the deadline (unless you choose to). By constantly using this app, you'll be able to get a glimpse of your work ethics through the app's suggestion features based on your recent records stored.
+	
+
+About ICEPs:
+	ICEPs (which stands for Ian, Chi, Elysia, and Pearl) is a group of student developers brought together initially by school requirements and constantly by emotional attachment. First established as an official team for a major academic requirement for CS 123: Software Engineering in the year 2015, ICEPs continues on to be the default team for the four members whenever the neeed arises for collaborative work. All four members are adept each with their own specialties and capabilities, and each one complements one another effectively.
+	If not developing, ICEPs becomes a common group of friends with not-so-common personal interests.
