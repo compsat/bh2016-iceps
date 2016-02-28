@@ -174,7 +174,7 @@
     </main>
     <script src="js/jquery-2.1.4.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="http://www.parsecdn.com/js/parse-latest.js" charset="utf-8"></script>
+    <script src="js/parse-1.6.14.js" charset="utf-8"></script>
     <script src="js/moment.js" charset="utf-8"></script>
     <script src="js/task.js" charset="utf-8"></script>
     <script src="js/dashboard.js" charset="utf-8"></script>
@@ -233,8 +233,6 @@
         $('#new_task input[type="submit"][id="clear"]').click(function (e) {
           e.preventDefault();
           $('#new_task input[type="text"], #new_task select, #new_task input[type="date"], #new_task textarea').prop('value',initial);
-        });
-
 
         $('#preferences input[type="radio"][name="taskPref"]').click(function (e) {
           // if task category was checked
@@ -252,7 +250,7 @@
         $('#ongoing_tasks .edit_task').click(function (e) {
           e.preventDefault();
           if ($('#ongoing_tasks .editing').css('display') != 'none' ) {
-            $('#ongoing_tasks .editing').css({'display':'none'});  
+            $('#ongoing_tasks .editing').css({'display':'none'});
           } else {
             $('#ongoing_tasks .editing').css({'display':'initial'});
           }
@@ -261,7 +259,7 @@
         $('#unfinished_tasks .edit_task').click(function (e) {
           e.preventDefault();
           if ($('#unfinished_tasks .editing').css('display') != 'none' ) {
-            $('#unfinished_tasks .editing').css({'display':'none'});  
+            $('#unfinished_tasks .editing').css({'display':'none'});
           } else {
             $('#unfinished_tasks .editing').css({'display':'initial'});
           }
