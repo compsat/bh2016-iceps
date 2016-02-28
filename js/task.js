@@ -104,7 +104,6 @@ var Task = Parse.Object.extend("Task",{
       },
     }
   );
-},{});
 
 function addTask(taskObj) {
   // var value = Parse

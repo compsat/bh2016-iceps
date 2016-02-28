@@ -30,7 +30,8 @@ $(function() {
 });
 
 var signUp = document.getElementById('signUp');
-signUp.addEventListener('click', function(){
+signUp.addEventListener('click', function(event){
+  event.preventDefault();
   var user = new Parse.User();
   user.set("username", document.getElementById('fullname').value);
   user.set("password", document.getElementById('password').value);
@@ -43,5 +44,17 @@ signUp.addEventListener('click', function(){
       // Show the error message somewhere and let the user try again.
       alert("Error: " + error.code + " " + error.message);
     }
+  });
+});
+var logIn = document.getElementById('loginBtn');
+logIn.addEventListener('click', function(event){
+  event.preventDefault();
+  var uname = document.getElementById('emailLog').value;
+  var pass = document.getElementById('passLog').value;
+  Parse.User.logIn(uname,pass, {
+    success: function(user){
+      location.href = 'dashboard.html';
+    },
+    error: function(user, error){console.log("Error: " + error.code + " " + error.message);}
   });
 });
