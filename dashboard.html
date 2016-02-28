@@ -32,8 +32,9 @@
         <div class="app_settings">
           <h2>App Preferences</h2>
           <hr>
-          <input type="checkbox"> mute notifications
-          <!-- place more settings here -->
+          <label><input type="checkbox"> mute notifications</label>
+          <label><input type="checkbox" name="hours"> Notify me every <input type="text" name="noOfHours" placeholder="12" disabled> hours.<br></label>
+          <label></label>
         </div>
       </div>
     </div>
@@ -44,7 +45,7 @@
         <div class="app_settings">
           <h2>Account Settings</h2>
           <hr>
-          <input type="checkbox"> <strong>cramming mode</strong>
+          <label><input type="checkbox"> <strong>cramming mode</strong></label>
           <!-- place more settings here -->
         </div>
       </div>
@@ -58,11 +59,11 @@
           </div>
           <hr>
           <h4>TODAY</h4>
-          <input type="checkbox" class="task"> Insert task here<br>
-          <input type="checkbox" class="task"> Another task is here<br>
+          <label><input type="checkbox" class="task"> Insert task here<br></label>
+          <label><input type="checkbox" class="task"> Another task is here<br></label>
           <h4>TOMORROW</h4>
-          <input type="checkbox" class="task"> More tasks for tomorrow<br>
-          <input type="checkbox" class="task"> I hope I don't die<br>
+          <label><input type="checkbox" class="task"> More tasks for tomorrow<br></label>
+          <label><input type="checkbox" class="task"> I hope I don't die<br></label>
         </div>
         <div id="unfinished_tasks" class="task_group">
           <div class="task_group_header">
@@ -70,13 +71,13 @@
           </div>
           <hr>
           <h4>MONDAY, Feb 29</h4>
-          <input type="checkbox" class="task"> Insert task here<br>
-          <input type="checkbox" class="task"> Another task is here<br>
+          <label><input type="checkbox" class="task"> Insert task here<br></label>
+          <label><input type="checkbox" class="task"> Another task is here<br></label>
           <h4>FRIDAY, Mar 4</h4>
-          <input type="checkbox" class="task"> More tasks for tomorrow<br>
-          <input type="checkbox" class="task"> Hope is not lost<br>
-          <input type="checkbox" class="task"> I can get through this<br>
-          <input type="checkbox" class="task"> Kakayanin<br>
+          <label><input type="checkbox" class="task"> More tasks for tomorrow<br></label>
+          <label><input type="checkbox" class="task"> Hope is not lost<br></label>
+          <label><input type="checkbox" class="task"> I can get through this<br></label>
+          <label><input type="checkbox" class="task"> Kakayanin<br></label>
         </div>
       </div>
       <div class="workingArea">
@@ -187,6 +188,13 @@
 
       $(function () {
         $('#datepicker').datepicker();
+
+        $('#preferences input[name="hours"]').click(function () {
+          $('#preferences input[name="hours"] + input[type="text"]').prop({
+            'disabled':false,
+            'value':12
+          });
+        });
       });
     </script>
   </body>

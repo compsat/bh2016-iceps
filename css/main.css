@@ -231,17 +231,29 @@ footer {
 #features {
   background-color: #2B2D42;
   text-align: center;
+  border-bottom: 2px rgba(0,0,0,0.1) solid;
 }
   #features > h1 {
     color: #EDF2F4;
   }
 
   #features .service {
+    margin: 0 auto;
     width: 50%;
+    display: flex;
+    flex-wrap: no-wrap;
+    align-items: flex-start;
   }
 
-  
+  #features .service .circle {
+    flex: 1 0 auto;
+    margin: 1em;
+    align-self: flex-start;
+  }
 
+  #features p {
+    color: #EDF2F4;
+  }
 
 /*
  * Dashboard.html
@@ -327,6 +339,27 @@ hr {
     color: #1A1A1A;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .modal label {
+    display: block;
+    padding-left: -15px;
+    padding-right: -15px;
+  }
+
+  input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -5px;
+    overflow: hidden;
+  }
+
+  .modal label input[type="text"] {
+    width: 7%;
   }
 
 .workWrapper {
