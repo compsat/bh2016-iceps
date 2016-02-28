@@ -8,6 +8,9 @@ body {
   line-height: 175%;
   overflow-x: hidden;
   color: #1a1a1a;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 h1, h2, h3 {
@@ -102,6 +105,7 @@ a:hover {
 .wrapper {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
   
   .wrapper > div {
@@ -111,6 +115,7 @@ a:hover {
 #intro {
   background-color: #8D99AE;
   text-align: center;
+  flex: 1;
 }
 
   #intro h1 {
@@ -132,18 +137,10 @@ a:hover {
   align-items: flex-start;
 }
 
-  /*TEMPORARY*/
-  .placeholder {
-    background-color: white;
+  .service img {
     width: 7em;
-    height: 7em;
     margin: 0 auto;
   }
-
-  .circle {
-    border-radius: 50%;
-  }
-  /*END TEMPORARY*/
 
   .service {
     flex-grow: 2;
@@ -232,6 +229,7 @@ footer {
   background-color: #2B2D42;
   text-align: center;
   border-bottom: 2px rgba(0,0,0,0.1) solid;
+  flex: 1;
 }
   #features > h1 {
     color: #EDF2F4;
@@ -254,6 +252,34 @@ footer {
   #features p {
     color: #EDF2F4;
   }
+
+/*
+ * About.html
+ */
+#about {
+  padding: 4em 5em;
+  background-color: #8D99AE;
+  flex: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+  #about > div > h2 {
+    color: #EDF2F4;
+  }
+
+  #about >div > h4 {
+    margin: 0.5em 0 0;
+  }
+
+  #about > div {
+    width: 45%;
+  }
+
+  .about_us {
+    align-self: flex-end;
+  }
+
 
 /*
  * Dashboard.html
