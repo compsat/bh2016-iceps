@@ -121,7 +121,7 @@
           <h1>Add Task</h1>
           <hr>
           <form id="new_task">
-            <input type="text" name="task_name" class="task_name" placeholder="Set task name" id="task_name"> <a href="#"><i class="fa fa-edit"></i></a>
+            <input type="text" name="task_name" class="task_name" placeholder="Set task name" id="task_name"> <i class="fa fa-edit"></i>
             <br>
             <div class="input_group">
               <select name="task_type" class="task_type" form="new_task" id="task_type">
@@ -228,7 +228,11 @@
               'value':12
           });
           }
-          
+        });
+
+        $('#new_task input[type="submit"][id="clear"]').click(function (e) {
+          e.preventDefault();
+          $('#new_task input[type="text"], #new_task select, #new_task input[type="date"], #new_task textarea').prop('value',initial);
         });
 
 

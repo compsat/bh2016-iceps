@@ -518,8 +518,9 @@ hr {
     padding: 0.5em 2em 2em;
   }
 
-    #new_task > a {
+    #new_task > i {
       color: #282d42;
+      font-size: 2em;
     }
 
     #new_task .input_group {
