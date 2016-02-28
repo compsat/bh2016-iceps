@@ -1,12 +1,16 @@
-var Task = Parse.Object.extend("Task",{
+var Task = new Parse.Object.extend("Task",{
   startTask: function(){
     this.hasStarted = true;
     this.timeStarted = moment().now();
   },
+  
+  /* This method is called when a task has been finished or deleted */
   endTask: function(){
     this.hasStarted = false;
     this.isFinished = true;
   },
+  /* converts the String priority level to its numerical equivalent
+  @param level - can only be "High", "Med", or "Low"; states the level of priority--is "Medium" by default */
   setPrioLevel: function(level){
     switch (level) {
       case "Low":
@@ -22,6 +26,8 @@ var Task = Parse.Object.extend("Task",{
         this.prioLvl = 2;
       }
     },
+	/* converts the String type of task to its numerical equivalent
+	@param task - the type of task */
     setTypeOfTask: function(task){
       switch (task) {
         case "Project":
@@ -50,6 +56,9 @@ var Task = Parse.Object.extend("Task",{
             break;
       }
     },
+	/*setting a task's duration given the type of task and the difficulty level
+	@param diffLevel - the difficulty level specified by the user
+	@param task - the type of task specified by the user */
     setDuration: function(diffLevel, task){
       switch(diffLevel){
           case 1:
@@ -68,9 +77,13 @@ var Task = Parse.Object.extend("Task",{
       }
       return 0;
     },
+	/* returns the duration  */
     returnDuration: function(){
         return getDuration(diffLvl, task);
     },
+	/* gives the increment that you add to the priority level as the deadline of the task comes near using the Fibonacci algorithm
+	@param days - days left before the deadline 
+	@returns equivalent number*/
     getIncrement: function(numOfDays){
       switch (numOfDays) {
           case 0:
@@ -81,18 +94,23 @@ var Task = Parse.Object.extend("Task",{
               return getIncrement(numOfDays - 1) + getIncrement(numOfDays - 2);
       }
     },
+	/* getting the expected time of finish given the time the task was started on and the derived duration*/
     timeOfFinishing: function(){
-        return (this.get('dayAssigned')+this.get('duration'))/24;
+        return (this.get('timeStarted')+this.get('duration'))/24;
     },
+	/* getting time left from current time before deadline */
     getTimeLeftFromNow: function(){
       var diff = moment(this.get('deadline')).subtract(moment().now());
       return moment(diff).hour().millisecond();
     },
+	/* getting time left since day assigned before deadline */
     getTimeLeft: function(){
       var deadline = moment(this.get('deadline'));
       var assigned = moment(this.get('dayAssigned'));
       return deadline.diff(assigned).millisecond();
     },
+	/* This method computes for all the possible times that the task might be started
+	@return timeToStart - the list of all possible times to start on the task */
     timeToStart: function(){
       var howManyTask = getTimeLeft()/this.get('duration');
       var assignedMoment = moment(this.get('dayAssigned'));
