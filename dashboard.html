@@ -32,8 +32,8 @@
         <div class="app_settings">
           <h2>App Preferences</h2>
           <hr>
-          <label><input type="checkbox" name="notifs"> mute notifications</label>
-          <label><input type="checkbox" name="hours"> Notify me every <input type="text" name="noOfHours" placeholder="12" disabled> hours.<br></label>
+          <label><input type="radio" name="notifs"> mute notifications</label>
+          <label><input type="radio" name="notifs"> Notify me every <input type="text" name="noOfHours" placeholder="12" disabled> hours.<br></label>
           <h3>Organize my tasks...</h3>
           <hr>
           <form>
@@ -215,31 +215,22 @@
       $(function () {
         $('#datepicker').datepicker();
 
-        $('#preferences input[name="hours"]').click(function (e) {
-          // if remind me in X hours is checked
-          if ($('#preferences input[name="hours"] + input[type="text"]').prop('disabled') == false) {
-            $('#preferences input[name="hours"] + input[type="text"]').prop({
-              'disabled':true,
+        $('#preferences input[name="notifs"]').click(function (e) {
+          // if notifs was chosen
+          if ($('#preferences input[name="noOfHours"]').prop('disabled') == false) {
+            $('#preferences input[name="noOfHours"]').prop({
+              'disabled': true,
               'value':null
             });
           } else {
-            $('#preferences input[name="hours"] + input[type="text"]').prop({
-              'disabled':false,
+            $('#preferences input[name="noOfHours"]').prop({
+              'disabled': false,
               'value':12
-            });
+          });
           }
+          
         });
 
-        $('#preferences input[name="notifs"]').click(function (e) {
-          // if "mute notifs" was checked
-          var textbox = $('#preferences input[name="hours"] + input[type="text"]').prop('disabled');
-          if($('#preferences input[name="hours"]').prop('disabled') == false) {
-            $('#preferences input[name="hours"]').prop('disabled', true);
-            $('#preferences input[name="hours"] + input[type="text"]').prop('disabled', !textbox);
-          } else {
-            $('#preferences input[name="hours"]').prop('disabled', false);
-          }
-        });
 
         $('#preferences input[type="radio"][name="taskPref"]').click(function (e) {
           // if task category was checked
