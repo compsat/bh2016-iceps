@@ -9,13 +9,13 @@ var Task = new Parse.Object.extend("Task",{
   },
   setPrioLevel: function(level){
     switch (level) {
-      case "Low":
+      case "Low Priority":
         this.prioLvl = 1;
         break;
-      case "Med":
+      case "Medium Priority":
         this.prioLvl = 2;
         break;
-      case "High":
+      case "High Priority":
         this.prioLvl = 3;
         break;
       default:
@@ -91,16 +91,16 @@ var Task = new Parse.Object.extend("Task",{
     getTimeLeft: function(){
       var deadline = moment(this.get('deadline'));
       var assigned = moment(this.get('dayAssigned'));
-      return deadline.diff(assigned).millisecond();
+      return deadline.diff(assigned);
     },
     timeToStart: function(){
-      var howManyTask = getTimeLeft()/this.get('duration');
-      var assignedMoment = moment(this.get('dayAssigned'));
-      var timeToStart;
+      var howManyTask = this.getTimeLeft()/this.get('duration');
+      var assignedMoment = new Date(this.get('dayAssigned'));
+      var timeToStartArr;
       for (var i = 0; i < howManyTask; i++) {
         timeToStart.add(assignedMoment.add(this.get('duration'), 'hours'));
       }
-        return timeToStart;
+        return assignedMoment.add(this.get('duration'), 'hours');
       },
     }
   );
